@@ -1,0 +1,15 @@
+name: SSH Linux Runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ssh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Start SSH session
+        uses: mxschmitt/action-tmate@v3
+
+      - name: Keep runner alive
+        run: sleep 3600
