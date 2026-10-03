@@ -1,0 +1,21 @@
+name: Temporary Linux
+
+on:
+  workflow_dispatch:
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: System information
+        run: |
+          echo "Linux runner is running"
+          uname -a
+          lsb_release -a
+          echo "CPU:"
+          nproc
+          echo "RAM:"
+          free -h
+          echo "Disk:"
+          df -h
